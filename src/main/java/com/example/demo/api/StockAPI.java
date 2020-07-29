@@ -30,7 +30,7 @@ public class StockAPI {
     }
 
     @GetMapping("/get-stock-name/{symbol}")
-    public Optional<String> getStockName(@Valid String symbol) {
+    public Optional<String> getStockName(@Valid @PathVariable String symbol) {
         Optional<Stock> optionalStock = stockService.getStockBySymbol(symbol);
         if(optionalStock.isPresent()) {
             Stock stockFound = optionalStock.get();
