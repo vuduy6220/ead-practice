@@ -1,4 +1,17 @@
-var
+var getStock = {
+    getStockName(symbol) {
+        axios
+            .get('/api/v1/stocks/get-stock-price/'+symbol)
+            .then(response => fn(response))
+            .catch(error => console.log(error))
+    },
+    getStockPrice(symbol) {
+        axios
+            .get('/api/v1/stocks/get-stock-name/'+symbol)
+            .then(response => fn(response))
+            .catch(error => console.log(error))
+    }
+}
 
 var Index = Vue.extend({
     template: '#home',
