@@ -18,10 +18,10 @@
 </div>
 
 <template id="home">
-    <div class="container">=
+    <div class="container">
             <div class="form-group">
                 <label>Search Stock</label>
-                <input type="text" @change="changeSymbol" :value="{{symbol}}" class="form-control" placeholder="Enter symbol">
+                <input type="text"  @input="changeSymbol($event)" v-model="symbol" class="form-control" placeholder="Enter symbol">
                 <button>Search Stock Name</button>
                 <button>Search Stock Price</button>
             </div>

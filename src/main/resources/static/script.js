@@ -1,4 +1,4 @@
-var getStock = {
+var stockService = {
     getStockName(symbol) {
         axios
             .get('/api/v1/stocks/get-stock-price/'+symbol)
@@ -18,17 +18,17 @@ var Index = Vue.extend({
     data: function() {
         return {result: '',symbol: ''};
     },
-    computed: {
-        getStockName() {
-
+    methods: {
+        async getStockName() {
+            this.result = await stockService.getStockName(this.symbol);
         },
-        getStockPrice() {
-
+        async getStockPrice() {
+            this.result = await stockService.getStockPrice(this.symbol);
         },
         changeSymbol(e) {
-            console.log(e)
+            this.symbol = e.target.value;
         }
-    }
+    },
 });
 
 var router = new VueRouter({
