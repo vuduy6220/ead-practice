@@ -8,7 +8,7 @@ var stockService = {
     getStockPrice(symbol) {
         return axios
             .get('/api/v1/stocks/get-stock-price/'+symbol)
-            .then(response => fn(response))
+            .then(response => (response))
             .catch(error => console.log(error))
     }
 }
