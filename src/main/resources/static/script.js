@@ -1,13 +1,13 @@
 var stockService = {
     getStockName(symbol) {
         return axios
-            .get('/api/v1/stocks/get-stock-price/'+symbol)
+            .get('/api/v1/stocks/get-stock-name/'+symbol)
             .then(response => (response))
             .catch(error => console.log(error))
     },
     getStockPrice(symbol) {
         return axios
-            .get('/api/v1/stocks/get-stock-name/'+symbol)
+            .get('/api/v1/stocks/get-stock-price/'+symbol)
             .then(response => fn(response))
             .catch(error => console.log(error))
     }
