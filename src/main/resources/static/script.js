@@ -1,12 +1,12 @@
 var stockService = {
     getStockName(symbol) {
-        axios
+        return axios
             .get('/api/v1/stocks/get-stock-price/'+symbol)
-            .then(response => fn(response))
+            .then(response => (response))
             .catch(error => console.log(error))
     },
     getStockPrice(symbol) {
-        axios
+        return axios
             .get('/api/v1/stocks/get-stock-name/'+symbol)
             .then(response => fn(response))
             .catch(error => console.log(error))
@@ -20,10 +20,12 @@ var Index = Vue.extend({
     },
     methods: {
         async getStockName() {
-            this.result = await stockService.getStockName(this.symbol);
+            const res = await stockService.getStockName(this.symbol);
+            this.result = res.data;
         },
         async getStockPrice() {
-            this.result = await stockService.getStockPrice(this.symbol);
+            const res = await stockService.getStockPrice(this.symbol);
+            this.result = res.data;
         },
         changeSymbol(e) {
             this.symbol = e.target.value;
