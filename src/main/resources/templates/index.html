@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>Stock</title>
+    <link href="https://unpkg.com/bootstrap@3.4.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
 
+<div class="container">
+    <h1>Stock Manage</h1>
+    <main id="app">
+        <router-view></router-view>
+    </main>
+</div>
+
+<template id="home">
+    <div class="container">=
+            <div class="form-group">
+                <label>Search Stock</label>
+                <input type="text" @change="changeSymbol" :value="{{symbol}}" class="form-control" placeholder="Enter symbol">
+                <button>Search Stock Name</button>
+                <button>Search Stock Price</button>
+            </div>
+            <div>
+                <span>Kết quả tìm kiếm</span>:
+                <span>{{result}}</span>
+            </div>
+    </div>
+</template>
+
+<script src="https://unpkg.com/vue@2.5.22/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router@3.0.2/dist/vue-router.js"></script>
+<script src="https://unpkg.com/axios@0.18.0/dist/axios.min.js"></script>
+<script src="./script.js"></script>
 </body>
+
 </html>
