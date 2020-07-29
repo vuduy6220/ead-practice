@@ -22,8 +22,8 @@
             <div class="form-group">
                 <label>Search Stock</label>
                 <input type="text"  @input="changeSymbol($event)" v-model="symbol" class="form-control" placeholder="Enter symbol">
-                <button>Search Stock Name</button>
-                <button>Search Stock Price</button>
+                <button @click="getStockName">Search Stock Name</button>
+                <button @click="getStockPrice">Search Stock Price</button>
             </div>
             <div>
                 <span>Kết quả tìm kiếm</span>:
